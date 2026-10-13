@@ -17,7 +17,7 @@ def predict():
 def predict_batch():
     data = request.json["features"]
     prediction = model.predict([np.array(x) for x in data])
-    return jsonify({"prediction": [int(x) for x in prediction]})
+    return jsonify({"predictions": [int(x) for x in prediction]})
 
 if __name__ == "__main__": 
     app.run(host="0.0.0.0", port=8000)
